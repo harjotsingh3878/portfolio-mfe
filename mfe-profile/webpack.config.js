@@ -16,6 +16,9 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+        options: {
+          presets: ['@babel/preset-react'],
+        },
       },
       {
         test: /\.css$/,
@@ -28,11 +31,13 @@ module.exports = {
       name: 'profile',
       filename: 'remoteEntry.js',
       exposes: {
-        './ProfileApp': './src/App',
+        './App': './src/App',
       },
       shared: {
-        react: { singleton: true },
-        'react-dom': { singleton: true },
+        react: { singleton: true, eager: false, strictVersion: false },
+        'react-dom': { singleton: true, eager: false, strictVersion: false },
+        '@tanstack/react-query': { singleton: true, eager: false },
+        axios: { singleton: true, eager: false },
       },
     }),
     new HtmlWebpackPlugin({

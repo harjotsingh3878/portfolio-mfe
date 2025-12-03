@@ -8,9 +8,9 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { ThemeProvider } from './context/ThemeContext';
 
 // Lazy load MFEs
-const Transactions = lazy(() => import('transactions/TransactionsApp'));
-const Profile = lazy(() => import('profile/ProfileApp'));
-const Notifications = lazy(() => import('notifications/NotificationsApp'));
+const Transactions = lazy(() => import('transactions/App'));
+const Profile = lazy(() => import('profile/App'));
+const Notifications = lazy(() => import('notifications/App'));
 
 const App = () => {
   return (

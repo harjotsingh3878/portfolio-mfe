@@ -37,11 +37,12 @@ module.exports = {
         notifications: 'notifications@http://localhost:3003/remoteEntry.js',
       },
       shared: {
-        react: { singleton: true, requiredVersion: '^18.2.0' },
-        'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
-        'react-router-dom': { singleton: true },
-        '@reduxjs/toolkit': { singleton: true },
-        'react-redux': { singleton: true },
+        react: { singleton: true, eager: false, requiredVersion: '^18.2.0', strictVersion: false },
+        'react-dom': { singleton: true, eager: false, requiredVersion: '^18.2.0', strictVersion: false },
+        'react-router-dom': { singleton: true, eager: false },
+        '@reduxjs/toolkit': { singleton: true, eager: false },
+        'react-redux': { singleton: true, eager: false },
+        '@tanstack/react-query': { singleton: true, eager: false },
       },
     }),
     new HtmlWebpackPlugin({
